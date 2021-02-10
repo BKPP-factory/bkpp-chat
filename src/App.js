@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import ChatBot from 'react-simple-chatbot';
+import steps from './steps'
+import { isStyledComponent, ThemeProvider } from 'styled-components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const theme = {
+  background: '#213159',
+  fontFamily: 'Helvetica Neue',
+  headerBgColor: '#3d6098',
+  headerFontColor: '#fff',
+  headerFontSize: '15px',
+  botBubbleColor: '#f04b47',
+  botFontColor: '#fff',
+  userBubbleColor: '#e7e7e7',
+  userFontColor: '#4a4a4a',
+};
+
+const style = {
+  height: '100vh'
 }
 
-export default App;
+const contentStyle = {
+  height: window.innerHeight - 112
+}
+
+const ThemedExample = () => (
+  <ThemeProvider theme={theme}>
+    <ChatBot 
+    className="chatbot"
+    customDelay={500}
+    style={style}
+    contentStyle={contentStyle}
+    botAvatar="pp.jpeg"
+    userAvatar="bk.jpg"
+    headerTitle="BKPP聊天室"
+    steps={steps} />
+  </ThemeProvider>
+);
+
+export default ThemedExample;
