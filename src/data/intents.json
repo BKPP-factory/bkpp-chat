@@ -1,0 +1,15 @@
+[
+	{ 
+		"intent": "introduction", 
+		"keywords": ["介绍", "全名", "身高", "学校"] 
+	}, { 
+		"intent": "farewell", 
+		"keywords": ["再见", "走啦", "拜拜", "告辞", "不聊了"] 
+	}, { 
+		"intent": "boyfriend", 
+		"keywords": ["男朋友", "恋爱", "男友"] 
+	}, { 
+		"intent": "chicken", 
+		"keywords": ["炸鸡"] 
+	}
+]

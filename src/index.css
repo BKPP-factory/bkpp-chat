@@ -23,6 +23,11 @@ code {
   .rsc-container {
     height: auto;
   }
+  .rsc-footer {
+    position: fixed !important;
+    bottom: 0;
+    width: 100%;
+  }
 }
 .rsc-container {
   margin: auto;

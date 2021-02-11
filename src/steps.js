@@ -1,3 +1,6 @@
+import intents from './data/intents.json';
+import answers from './data/answers.json';
+
 const steps = [
   {
     id: '0',
@@ -47,15 +50,27 @@ const steps = [
 ];
 
 function ppAnswer(input) {
-  console.log(input)
   let userValue = input['previousValue']
-  if (userValue.includes('介绍')) {
-    return '我的全名是PP Krit Amnuaydechkorn，出生于1999年4月30日，身高178cm，目前在泰国农业大学经济系念大四。'
-  } else if (userValue.includes('走了')) {
-    return '再见~'
-  } else {
-    return '秘密na~'
+  let answerIntent = ''
+  let answer = ''
+  for (let i = 0; i < intents.length; i++) {
+    let intent = intents[i]['intent']
+    let keywords = intents[i]['keywords']
+    for (let j = 0; j < keywords.length; j++) {
+      let keyword = keywords[j]
+      if (userValue.includes(keyword)) {
+        answerIntent = intent
+        console.log(answerIntent)
+      }
+    }
   }
+  if (answerIntent !== '') {
+    let intentAnswers = answers[answerIntent]
+    answer = intentAnswers[Math.floor(Math.random() * intentAnswers.length)]
+  } else {
+    answer = "唔，这个问题我不知道怎么回答..."
+  }
+  return answer
 }
 
 function answerStep(input) {

@@ -16,7 +16,7 @@ const theme = {
 };
 
 const style = {
-  height: '100vh'
+  height: window.innerWidth < 481 ? 'calc(100vh - 51px)': '100vh'
 }
 
 const contentStyle = {
