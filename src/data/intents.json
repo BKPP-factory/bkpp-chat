@@ -11,5 +11,8 @@
 	}, { 
 		"intent": "chicken", 
 		"keywords": ["炸鸡"] 
+	}, { 
+		"intent": "itsay", 
+		"keywords": ["作品", "以你的心诠释我的爱", "以爱", "一心一译"] 
 	}
 ]
